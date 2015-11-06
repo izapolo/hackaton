@@ -1,0 +1,1 @@
+si se estima necesario pude incluir en este directorio clases para excepciones particularizadas para la aplicación.

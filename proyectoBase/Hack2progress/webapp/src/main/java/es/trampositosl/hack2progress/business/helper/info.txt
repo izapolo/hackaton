@@ -1,0 +1,1 @@
+si fuesen necesarios en este directorio deberán incluir objetos "helper" que aumenten la legibilidad de los objetos de dominio

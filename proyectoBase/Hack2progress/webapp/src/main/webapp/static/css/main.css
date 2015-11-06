@@ -1,0 +1,105 @@
+body {  
+  background-color: #ededed;
+}
+
+.imageCabecera {
+	z-index: 0;
+	height: 92px;
+	background-image: url('../images/cabecera.jpg');
+	background-color: #174894;
+	margin-bottom: 0px;
+}
+
+.navbar {
+	background-color: #174894;
+	border-color: #174894;
+}
+
+.applicationbar {
+	background-color: #174894;
+	color: white;
+	font-weight: bold;
+	padding-bottom: 5px;
+	margin-top: 0px;
+}
+
+.loginbox {
+	width:500px; 
+	margin-left:auto; 
+	margin-right:auto;
+	background-image:url('../images/logosogi.png');
+	background-repeat:no-repeat;
+	background-position:95% 20%; 
+	margin-bottom: 0px;
+	border-top-right-radius: 6px;
+	border-top-left-radius: 6px;
+	background-color: #E5E5E5;
+	padding:20px;
+}
+
+
+.loginpie {
+	width:500px; 
+	margin-left:auto; 
+	margin-right:auto;
+	background-color: #ADD8E6;
+	padding: 5px;
+	text-align:center;
+	border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 6px;
+}
+
+.loginpie a {
+ color: #0088cc;
+}
+
+#textoEntrada {
+	text-align:justify;
+	text-justify:inter-word;
+	padding: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-color: white;
+	overflow: auto;
+	height: 90px;
+	width: 70%;
+	margin-left:auto;
+	margin-right:auto;
+	font-size: 10px;
+}
+
+.info-entrada {
+	width: 80%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.text-error {
+	color: red;
+}
+
+.content {
+	margin-top: 30px;
+}
+
+
+.enlacesCabecera {
+  list-style: none;
+  text-align: right;
+}
+
+.enlacesCabecera li {
+  white-space: nowrap;  
+}
+
+
+.menubar {
+	background-color: #FAFAFA;
+	padding-left: 0px;
+	border-bottom: 1px solid #BFBFBF;
+}
+
+
+#login .input-group{
+	padding: 5px;
+}

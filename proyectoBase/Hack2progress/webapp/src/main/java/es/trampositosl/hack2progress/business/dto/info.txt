@@ -1,0 +1,2 @@
+aquí se deberán almacenar los objetos para el patron dto.
+no se permite que la capa de servicios importe directamente objetos de la capa de presentación.

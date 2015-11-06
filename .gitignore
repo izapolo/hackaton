@@ -1,0 +1,8 @@
+*.project
+*.settings
+*.target
+*.tern-project
+*.classpath
+*.ear
+*.war
+*.MF

@@ -1,0 +1,2 @@
+esta carpeta contendrá los interfaces de los componentes @service de spring.
+las implementaciones de dichos servicios deberán ubicarse en el nivel inferior. 

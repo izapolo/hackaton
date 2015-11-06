@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+    <!-- plantilla principal -->
+    <definition name="mainTemplate" template="/WEB-INF/views/templates/tiles2/mainTemplate.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/pages/commons/header.jsp" />
+        <put-attribute name="appbar" value="/WEB-INF/views/pages/commons/appbar.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/views/pages/commons/menu.jsp" />
+        <put-attribute name="body" value="" />
+    </definition>
+    
+    <!-- Replica de la plantilla principal pero sin barra de menu-->
+    <definition name="templateWhithoutMenu" template="/WEB-INF/views/templates/tiles2/templateWhithoutMenu.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/pages/commons/header.jsp" />
+        <put-attribute name="appbar" value="/WEB-INF/views/pages/commons/appbar.jsp" />
+        <put-attribute name="body" value="" />
+    </definition>
+    
+    <!-- plantilla error -->
+    <definition name="errorTemplate" extends="templateWhithoutMenu">
+		<put-attribute name="body" value="/WEB-INF/views/templates/tiles2/errorTemplate.jsp" />
+    </definition>    
+    
+    <definition name="infoTemplate" extends="templateWhithoutMenu">
+		<put-attribute name="body" value="/WEB-INF/views/templates/tiles2/infoTemplate.jsp" />
+    </definition>        
+    
+	<!-- Paginas de Infraestructura -->
+	<definition  name="accessDeniedPage" extends="errorTemplate">
+    	<put-attribute name="message" value="app.403.message" type="string" cascade="true"/>
+    	<put-attribute name="title" value="app.403.title" type="string" cascade="true"/>
+    	<put-attribute name="button" value="app.403.button.aceptar" type="string" cascade="true"/>
+    	<put-attribute name="image" value="app.403.image" type="string" cascade="true"/>
+    </definition>
+   
+	<definition  name="sessionTimeOutPage" extends="errorTemplate">
+    	<put-attribute name="message" value="app.408.message" type="string" cascade="true"/>
+    	<put-attribute name="title" value="app.408.title" type="string" cascade="true"/>
+    	<put-attribute name="button" value="app.408.button.aceptar" type="string" cascade="true"/>
+    	<put-attribute name="image" value="app.408.image" type="string" cascade="true"/>
+    </definition>
+    
+    <definition  name="pageMissingPage" extends="errorTemplate">
+    	<put-attribute name="message" value="app.404.message" type="string" cascade="true"/>
+    	<put-attribute name="title" value="app.404.title" type="string" cascade="true"/>
+    	<put-attribute name="button" value="app.404.button.aceptar" type="string" cascade="true"/>
+    	<put-attribute name="image" value="app.404.image" type="string" cascade="true"/>
+    </definition>
+    
+    <definition  name="genericErrorPage" extends="errorTemplate">
+    	<put-attribute name="message" value="app.error.message" type="string" cascade="true"/>
+    	<put-attribute name="title" value="app.error.title" type="string" cascade="true"/>
+    	<put-attribute name="button" value="app.error.button.aceptar" type="string" cascade="true"/>
+    	<put-attribute name="image" value="app.error.image" type="string" cascade="true"/>
+    </definition>
+    
+    <definition  name="genericInfoPage" extends="infoTemplate">
+    	<put-attribute name="message" value="app.info.message" type="string" cascade="true"/>
+    	<put-attribute name="title" value="app.info.title" type="string" cascade="true"/>
+    	<put-attribute name="button" value="app.info.button.aceptar" type="string" cascade="true"/>
+    </definition>
+    
+   <!--  Pagina Principal -->
+    <definition  name="homePage" extends="mainTemplate">
+    	<put-attribute name="body" value="/WEB-INF/views/pages/commons/home.jsp" />
+    </definition>
+    
+	<!-- Otras Informativas -->    
+    <definition  name="changeLogPage" extends="mainTemplate">
+    	<put-attribute name="body" value="/WEB-INF/views/pages/commons/changelog.jsp" />
+    </definition>
+    
+   
+    <definition  name="loginPage" extends="templateWhithoutMenu">
+    	<put-attribute name="body" value="/WEB-INF/views/pages/public/login.jsp" />
+    </definition>      
+</tiles-definitions>
