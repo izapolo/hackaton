@@ -1,0 +1,82 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Ejemplo de uso del API SPARQL</title>
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script>
+$(document).ready(function(){
+$('#search_button').live('click', function(){
+//Obtener de options de WP
+var endpoint = "http://datos.santander.es/sparql/";
+
+var restquery = "select?query=";
+var query = $("#query").val();
+var format = $("#format").val();
+var urlQuery = endpoint + restquery + escape(query);
+
+if(format=="xml" || format=="json" || format=="rdf"){
+urlQuery = endpoint + restquery + escape(query) + "&output=" + format;
+//descargar
+alert(urlQuery);
+
+}else{
+urlQuery = endpoint + restquery + escape(query); + "&output=json";
+$.ajax({
+url: urlQuery,
+dataType: 'json',
+jsonp: 'callback',
+success: function(data) {
+var item ;
+$("#triplelist").html('');
+var resultTable = "<table><thead><tr>";
+
+for (var j = 0; j < data.head.vars.length; j++) {
+resultTable = resultTable + "<th>" + data.head.vars[j];
+}
+resultTable = resultTable + "</tr></thead>";
+
+if(data.results.bindings.length>0){
+resultTable = resultTable + "<tbody>";
+}
+
+for (var i = 0; i < data.results.bindings.length; i++) {
+resultTable = resultTable + "<tr>";
+item = data.results.bindings[i];
+for (var j = 0; j < data.head.vars.length; j++) {
+resultTable = resultTable + "<td>"+ item[data.head.vars[j]].value + "</td>";
+}
+resultTable = resultTable + "</tr>";
+}
+
+if(data.results.bindings.length>0){
+resultTable = resultTable + "</tbody>";
+}
+
+resultTable = resultTable + "</table>";
+$("#triplelist").append(resultTable);
+},
+error:function (xhr, ajaxOptions, thrownError){
+$("#triplelist").append(thrownError);
+}
+});
+}//end-else
+});
+
+});
+</script>
+</head>
+<body>
+<h1>Consulta sparql</h1>
+<div>
+<label >Contexto/Grafo: </label>
+<input id="context" value="http://datos.santander.es/sparql/context/samples"/>
+<label>Query: </label>
+<input id="query" value="SELECT * WHERE {?s ?p ?o} LIMIT 10" />
+<label>Formato: </label>
+<input id="format" value="json" />
+<a href="#" id="search_button">Buscar</a>
+</div>
+<!-- Contenedor de la tabla de resultados -->
+<div id="triplelist"></div>
+</body>
+</html>

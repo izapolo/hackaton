@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Custom Save Widget</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+      #save-widget {
+        width: 300px;
+        box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
+        background-color: white;
+        padding: 10px;
+        font-family: Roboto, Arial;
+        font-size: 13px;
+        margin: 15px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="save-widget">
+      <strong>Taxi Lonja</strong>
+      <p>Los taxi de la Lonja.</p>
+    </div>
+    <script>
+/*
+ * This sample uses a custom control to display the SaveWidget. Custom
+ * controls can be used in place of the default Info Window to create a
+ * custom UI.
+ * This sample uses a Place ID to reference Google Sydney. Place IDs are
+ * stable values that uniquely reference a place on a Google Map and are
+ * documented in detail at:
+ * https://developers.google.com/maps/documentation/javascript/places#placeid
+ */
+
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 17,
+    center: {lat: 43.453237, lng: -3.821732},
+    mapTypeControlOptions: {
+      mapTypeIds: [
+        google.maps.MapTypeId.ROADMAP,
+        google.maps.MapTypeId.SATELLITE
+      ],
+      position: google.maps.ControlPosition.BOTTOM_LEFT
+    }
+  });
+
+  var widgetDiv = document.getElementById('save-widget');
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(widgetDiv);
+
+  // Append a Save Control to the existing save-widget div.
+  var saveWidget = new google.maps.SaveWidget(widgetDiv, {
+//     place: {
+// //       ChIJN1t_tDeuEmsRUsoyG83frY4 is the place Id for Google Sydney.
+//      placeId: '',
+//       location: {lat: 43.453237, lng: -3.821732}
+//     },
+    attribution: {
+      source: 'Google Maps JavaScript API',
+      webUrl: 'https://developers.google.com/maps/'
+    }
+  });
+
+  var marker = new google.maps.Marker({
+    map: map,
+    position: saveWidget.getPlace().location
+  });
+}
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoloNmQ59tsVAvdZ-TdzW7ysRhZoufSu8&callback=initMap&signed_in=true" async defer>
+    </script>
+  </body>
+</html>

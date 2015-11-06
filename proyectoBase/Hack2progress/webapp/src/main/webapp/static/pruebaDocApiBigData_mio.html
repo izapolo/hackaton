@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ejemplo de uso del API SPARQL</title>
+<script type="text/javascript" src="./js/jquery/jquery-1.9.1.min.js"></script>
+<script>
+$(document).ready(function(){
+$('#search_button').click( function(){
+
+var urlQuery = "http://datos.santander.es/api/rest/datasets/oferta_empleo.json";
+$.ajax({
+url: urlQuery,
+dataType: 'json',
+//jsonp: 'callback',
+success: function(data) {
+},
+error:function (xhr, ajaxOptions, thrownError){
+$("#triplelist").append(thrownError);
+}
+});
+//}//end-else
+});
+
+});
+</script>
+</head>
+<body>
+<h1>Consulta sparql</h1>
+<div>
+<label >Contexto/Grafo: </label>
+<input id="context" value="http://datos.santander.es/sparql/context/samples"/>
+<label>Query: </label>
+<input id="query" value="SELECT * WHERE {?s ?p ?o} LIMIT 10" />
+<label>Formato: </label>
+<input id="format" value="json" />
+<a href="#" id="search_button">Buscar</a>
+</div>
+<!-- Contenedor de la tabla de resultados -->
+<div id="triplelist"></div>
+</body>
+</html>
