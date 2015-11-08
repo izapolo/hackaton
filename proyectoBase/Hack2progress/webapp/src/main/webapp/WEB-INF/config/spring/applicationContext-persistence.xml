@@ -34,8 +34,8 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:XE" />
-		<property name="username" value="solia" />
-		<property name="password" value="solia" />
+		<property name="username" value="hach2progress" />
+		<property name="password" value="hach2progress" />
 	</bean> 
 	
 	<bean id="transactionManager"
