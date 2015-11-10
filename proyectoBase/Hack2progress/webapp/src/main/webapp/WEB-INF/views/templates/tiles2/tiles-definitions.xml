@@ -68,6 +68,16 @@
     	<put-attribute name="body" value="/WEB-INF/views/pages/commons/home.jsp" />
     </definition>
     
+     <!--  Pagina Principal -->
+    <definition  name="getMap" extends="mainTemplate">
+    	<put-attribute name="body" value="/WEB-INF/views/pages/google/getMap.jsp" />
+    </definition>
+    
+    <definition  name="getWayMap" extends="mainTemplate">
+    	<put-attribute name="body" value="/WEB-INF/views/pages/google/getWayMap.jsp" />
+    </definition>
+    
+    
 	<!-- Otras Informativas -->    
     <definition  name="changeLogPage" extends="mainTemplate">
     	<put-attribute name="body" value="/WEB-INF/views/pages/commons/changelog.jsp" />

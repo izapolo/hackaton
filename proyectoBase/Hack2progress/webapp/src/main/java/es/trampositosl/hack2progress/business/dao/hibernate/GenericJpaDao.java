@@ -24,7 +24,7 @@ import es.trampositosl.hack2progress.business.dao.IDaoGenericInterface;
 public class GenericJpaDao<T, P extends Serializable> implements IDaoGenericInterface<T, P> {
 
 	@PersistenceContext
-	private EntityManager em;
+	protected EntityManager em;
     
 	private static final Logger LOGGER = LoggerFactory.getLogger(GenericJpaDao.class);
 
@@ -96,6 +96,5 @@ public class GenericJpaDao<T, P extends Serializable> implements IDaoGenericInte
 		Query query = this.em.createQuery("Select count(r) from " + persistentClass.getName() + " r");
 		numRegistros = ((Long) query.getSingleResult()).longValue();
 		return numRegistros;
-	}
-
+	}	
 }
