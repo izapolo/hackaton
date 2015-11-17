@@ -65,8 +65,6 @@
     <select id="mode">
       <option value="DRIVING">Driving</option>
       <option value="WALKING">Walking</option>
-      <option value="BICYCLING">Bicycling</option>
-      <option value="TRANSIT">Transit</option>
     </select>
     </div>
   	
@@ -97,24 +95,13 @@ function initMap() {
     computeTotalDistance(directionsDisplay.getDirections());
   });
 
-//DRIVING, WALKING, BICYCLING, TRANSIT
-  
-//   displayRoute(taxiLonja, palacioMagdalena, directionsService,
-//       directionsDisplay, google.maps.TravelMode.DRIVING);
+//DRIVING, WALKING
 
 	document.getElementById('mode').addEventListener('change', function() {
 		calcularDistancia(taxiLonja, palacioMagdalena, directionsService, directionsDisplay);
   	});
 	calcularDistancia(taxiLonja, palacioMagdalena, directionsService, directionsDisplay);
 	
-
-
-
-//   displayRoute(taxiLonja, palacioMagdalena, directionsService,
-// 	      directionsDisplay, google.maps.TravelMode.BICYCLING);
-  
-//   displayRoute(taxiLonja, palacioMagdalena, directionsService,
-// 	      directionsDisplay, google.maps.TravelMode.TRANSIT);	
   
 }
 

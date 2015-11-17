@@ -18,7 +18,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Opciones <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li>
-				<a href="#">Accion 1</a>
+				<a href="#" id="googleMap">Google Map</a>
 			</li>           
             <sec:authorize access="hasRole('ROLE_HACK2PROGRESS.ADMIN')">
 				<li class="divider"></li>

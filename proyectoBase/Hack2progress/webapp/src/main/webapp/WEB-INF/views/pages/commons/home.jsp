@@ -1,5 +1,5 @@
 
-<div class="container">
+<div id="containerHome" class="container">
 	<div class="row">
 		<h3>Bienvenido a Hack2progressWAR !!!</h3>
 		<p>Para continuar desarrollando en base a esta aplicaci&oacute;n. Deber&iacute;a tener en consideraci&oacute;n los siguientes puntos:</p>
@@ -28,3 +28,4 @@
 		
 	</div>
 </div>
+<jsp:include page="../google/getJsonWayMap.jsp" />

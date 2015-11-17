@@ -3,6 +3,7 @@
  */
 package es.trampositosl.hack2progress.business.domain;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -24,7 +25,9 @@ import javax.persistence.TemporalType;
  * @author jcamus
  *
  */
+
 @Entity(name = "PUNTO_INTERES")
+@XmlRootElement()
 public class PuntoInteres {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "secuencia")
