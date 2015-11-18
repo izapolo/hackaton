@@ -9,12 +9,6 @@
   <packaging>pom</packaging>
   <name>Hack2progress</name>
   
- <!-- Sube--> 
-<!--   <parent> -->
-<!--     <groupId>es.gobcantabria.amap</groupId> -->
-<!--     <artifactId>amap-parent</artifactId> -->
-<!--     <version>2.0.2</version> -->
-<!--   </parent> -->
   <modules>
     <module>ear</module>
     <module>webapp</module>
