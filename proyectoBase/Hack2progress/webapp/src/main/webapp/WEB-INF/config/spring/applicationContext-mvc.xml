@@ -29,24 +29,13 @@
         <property name="locations">
             <list>
                 <value>classpath:aplicacion/Hack2progress-application.properties</value>
-                <value>file://${ruta_properties}/sistemas_global.properties</value>
-                <value>file://${ruta_properties}/sistemas_Hack2progress.properties</value >
             </list>
         </property> 
         <property name="ignoreUnresolvablePlaceholders" value="false"/>
     </bean>
     
 	<!-- Exponemos aquellas propiedades del sistema que no sean criticas -->
-	<bean id="SystemHelper" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
-        <property name="properties">
-            <props>
-				<prop key="passwordRemember">${sistemas.global.ldap.rememberpassword.url}</prop>
-				<prop key="passwordChange">${sistemas.global.ldap.changepassword.url}</prop>
-				<prop key="email_server">$sistemas.global.smtp.host}</prop>
-				<prop key="email_port">${sistemas.global.smtp.port}</prop>
-			</props>
-        </property>
-    </bean>
+
     
     <!-- Exponemos propiedades de la aplicacion -->
 	<bean id="ApplicationHelper" name="ApplicationHelper" class="org.springframework.beans.factory.config.PropertiesFactoryBean">

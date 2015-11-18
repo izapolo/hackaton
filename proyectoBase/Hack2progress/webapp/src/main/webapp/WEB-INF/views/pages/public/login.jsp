@@ -41,16 +41,7 @@
 			</div>			
 		</form>
 	</div>
-	
-	<div class="loginpie">
-		<a href="<spring:message code="sistemas.global.ldap.changepassword.url"/>" target="_blank">
-			<spring:message code="app.login.link.password.recordar"/>
-		</a> | 
-		<a href="<spring:message code="sistemas.global.ldap.rememberpassword.url"/>" target="_blank">
-			<spring:message code="app.login.link.password.cambiar"/>
-		</a>		
-	</div>
-</div><!-- /.container -->
+</div>
 
 <div class="container">
 	<div class="row">
@@ -60,4 +51,4 @@
 	<div class="footer">
 		<p class="text-center"><spring:message code="app.name.abrev"/> <spring:message code="app.login.label.version"/>: <spring:message code="app.version"/> (<spring:message code="app.last.release"/>)</p>
 	</div>	
-</div><!-- /.container -->
+</div>

@@ -28,4 +28,4 @@
 		
 	</div>
 </div>
-<jsp:include page="../google/getJsonWayMap.jsp" />
+<%-- <jsp:include page="../google/getJsonWayMap.jsp" /> --%>

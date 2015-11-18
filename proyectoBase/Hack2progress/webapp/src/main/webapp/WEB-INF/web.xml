@@ -10,7 +10,7 @@
 	
 	<context-param>
 		<param-name>log4jConfigLocation</param-name>
-		<param-value>file://${ruta_properties}/log4j_sogi.properties</param-value>
+		<param-value>classpath:aplicacion/Hack2progress-application.properties</param-value>  
 	</context-param>
 	
 	<listener>

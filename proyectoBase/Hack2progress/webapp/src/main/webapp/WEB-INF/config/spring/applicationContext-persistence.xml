@@ -19,8 +19,7 @@
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
-				<value>file://${ruta_properties}/sistemas_global.properties</value>
-                <value>file://${ruta_properties}/sistemas_Hack2progress.properties</value>
+				<value>classpath:aplicacion/Hack2progress-application.properties</value>   
 			</list>
 		</property>
 	</bean>

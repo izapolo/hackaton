@@ -9,9 +9,7 @@
 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
-                <value>classpath:aplicacion/Hack2progress-application.properties</value>
-                <value>file://${ruta_properties}/sistemas_global.properties</value>
-                <value>file://${ruta_properties}/sistemas_Hack2progress.properties</value>                               
+                <value>classpath:aplicacion/Hack2progress-application.properties</value>                             
             </list>
         </property> 
         <property name="ignoreUnresolvablePlaceholders" value="false"/>
@@ -25,7 +23,7 @@
 				<value>classpath:i18n/spring-security-messages</value>
 				<value>classpath:i18n/messages</value>
 				<value>classpath:i18n/errors-validation</value>
-				<value>file://${ruta_properties}/sistemas_global</value>				
+				<value>classpath:aplicacion/Hack2progress-application.properties</value>   				
 			</list>
 		</property>
 	</bean>		
