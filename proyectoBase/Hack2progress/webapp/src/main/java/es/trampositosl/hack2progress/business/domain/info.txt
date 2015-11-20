@@ -1,4 +1,0 @@
-en este directorio deberán colocarse los objetos de dominio.
-Estos objetos debrán contener las anotaciones JPA 2 para el mapeo de las entidades.
-la política de identificadores se basará en secuencias de oracle.
-deberán quedar anotadas las relaciones entre entidades y restricciones de formato de los campos.
