@@ -1,34 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="  
-            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
-            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd  
-            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd  
-           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd  
-           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
-           
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd  
+		http://www.springframework.org/schema/util
+		http://www.springframework.org/schema/util/spring-util-3.2.xsd  
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.2.xsd  
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-3.2.xsd  
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+		http://www.springframework.org/schema/jdbc
+		http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
+		http://www.springframework.org/schema/task
+		http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+		
 
 	<context:annotation-config />
 	<context:component-scan base-package="es.trampositosl.Hack2progress.business" />
+	<task:annotation-driven />
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
-	<bean id="propertyConfigurer"
-		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
-				<value>classpath:aplicacion/Hack2progress-application.properties</value>   
+				<value>classpath:aplicacion/Hack2progress-application.properties</value>
 			</list>
 		</property>
 	</bean>
-	
-<!-- 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"> -->
-<!-- 		<property name="jndiName" value="java:/jdbc/Hack2progress" /> -->
-<!-- 	</bean> -->
 
-	<!-- Datasource sin JNDI - Para pruebas -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
@@ -36,26 +44,33 @@
 		<property name="username" value="hack2progress" />
 		<property name="password" value="hack2progress" />
 	</bean> 
-	
-	<bean id="transactionManager"
-		class="org.springframework.orm.jpa.JpaTransactionManager">
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
-	
+
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="persistenceUnitName" value="Hack2progress" />
+		<property name="persistenceUnitName" value="hack2progress" />
 		<property name="jpaVendorAdapter">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 				<property name="showSql" value="${sistemas.app.hibernate.show_sql}" />
-<!-- 				<property name="generateDdl" value="${database.generateDdl}" /> -->
+				<property name="generateDdl" value="true" />
 			</bean>
 		</property>
 		<property name="jpaProperties">
 			<props>
+				<prop key="hibernate.show_sql">${sistemas.app.hibernate.show_sql}</prop>
+				<prop key="hibernate.dialect">${sistemas.app.hibernate.dialect}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${sistemas.app.hibernate.hbm2ddl.auto}</prop>
+				<prop key="hibernate.default_schema">${sistemas.app.hibernate.default_schema}</prop>
+				<prop key="hibernate.connection.autocommit">${sistemas.app.hibernate.connection.autocommit}
+				</prop>
 			</props>
-		</property>		
-	</bean>	
+		</property>
+	</bean>
 
-	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+	
 </beans>  
+

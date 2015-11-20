@@ -18,6 +18,7 @@ import es.trampositosl.hack2progress.business.service.IPuntoInteresService;
 
 
 @Controller
+@RequestMapping("/google")
 public class GoogleController
 {
 
@@ -33,7 +34,7 @@ public class GoogleController
      * 
      * @return
      */
-    @RequestMapping(value = "/google/getMap")
+    @RequestMapping(value = "/getMap")
     public String getMap(ModelMap model, HttpServletRequest request)
     {
 
@@ -53,7 +54,7 @@ public class GoogleController
      * 
      * @return
      */
-    @RequestMapping(value = "/google/getWayMap")
+    @RequestMapping(value = "/getWayMap")
     public String getWayMap(ModelMap model, HttpServletRequest request)
     {
 
@@ -72,7 +73,7 @@ public class GoogleController
     }
 
 
-    @RequestMapping(value = "/google/getJsonWayMap", method = RequestMethod.GET, produces="application/json")
+    @RequestMapping(value = "/getJsonWayMap", method = RequestMethod.GET, produces = "application/json")
     public @ResponseBody List<PuntoInteres> getWayMapJ()
     {
 
