@@ -5,7 +5,7 @@ package es.trampositosl.hack2progress.business.service;
 
 
 import java.util.List;
-import es.trampositosl.hack2progress.business.domain.PuntoInteres;
+import es.trampositosl.hack2progress.business.domain.ActividadDeportiva;
 
 
 /**
@@ -15,7 +15,7 @@ import es.trampositosl.hack2progress.business.domain.PuntoInteres;
 public interface IPuntoInteresService
 {
 
-    public List<PuntoInteres> list();
+    public List<ActividadDeportiva> list();
     
-    public PuntoInteres find(Integer id);
+    public ActividadDeportiva find(Integer id);
 }

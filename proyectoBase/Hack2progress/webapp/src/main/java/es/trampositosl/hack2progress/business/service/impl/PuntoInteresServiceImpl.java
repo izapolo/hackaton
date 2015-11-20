@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import es.trampositosl.hack2progress.business.dao.IDaoPuntoInteres;
-import es.trampositosl.hack2progress.business.domain.PuntoInteres;
+import es.trampositosl.hack2progress.business.domain.ActividadDeportiva;
 import es.trampositosl.hack2progress.business.service.IPuntoInteresService;
 
 
@@ -32,14 +32,14 @@ public class PuntoInteresServiceImpl implements IPuntoInteresService
     }
 
 
-    public List<PuntoInteres> list()
+    public List<ActividadDeportiva> list()
     {
 
 	return daoPuntoInteres.list();
     }
 
 
-    public PuntoInteres find(Integer id)
+    public ActividadDeportiva find(Integer id)
     {
 	return daoPuntoInteres.find(id.intValue());
     }

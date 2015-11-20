@@ -12,7 +12,7 @@ import javax.persistence.Query;
 import org.hibernate.Criteria;
 import org.springframework.stereotype.Repository;
 import es.trampositosl.hack2progress.business.dao.IDaoPuntoInteres;
-import es.trampositosl.hack2progress.business.domain.PuntoInteres;
+import es.trampositosl.hack2progress.business.domain.ActividadDeportiva;
 
 
 /**
@@ -20,10 +20,10 @@ import es.trampositosl.hack2progress.business.domain.PuntoInteres;
  *
  */
 @Repository
-public class PuntoInteresDaoImpl extends GenericJpaDao<PuntoInteres, Integer> implements IDaoPuntoInteres
+public class PuntoInteresDaoImpl extends GenericJpaDao<ActividadDeportiva, Integer> implements IDaoPuntoInteres
 {
 
-    public List<PuntoInteres> list(){
+    public List<ActividadDeportiva> list(){
 	
 	
 //	Criteria criteria = ((Session) em.getDelegate()).createCriteria(PuntoInteres.class);
@@ -38,8 +38,8 @@ public class PuntoInteresDaoImpl extends GenericJpaDao<PuntoInteres, Integer> im
 	
 	
 //	
-	List<PuntoInteres> listPuntoInteres = new ArrayList<PuntoInteres>();
-	Query query = this.em.createNativeQuery("SELECT * FROM PUNTO_INTERES", PuntoInteres.class);
+	List<ActividadDeportiva> listPuntoInteres = new ArrayList<ActividadDeportiva>();
+	Query query = this.em.createNativeQuery("SELECT * FROM PUNTO_INTERES", ActividadDeportiva.class);
 	listPuntoInteres = query.getResultList(); 
 	return listPuntoInteres;
     }

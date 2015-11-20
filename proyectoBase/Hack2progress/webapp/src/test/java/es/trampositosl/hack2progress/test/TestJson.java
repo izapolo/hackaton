@@ -19,8 +19,8 @@ import org.springframework.util.StringUtils;
 
 import com.google.gson.Gson;
 
-import es.trampositosl.hack2progress.business.domain.PuntoInteres;
-import es.trampositosl.hack2progress.business.domain.TipoPuntoInteres;
+import es.trampositosl.hack2progress.business.domain.ActividadDeportiva;
+import es.trampositosl.hack2progress.business.domain.Deporte;
 
 public class TestJson {
 
@@ -41,15 +41,15 @@ public class TestJson {
 		 Map<String, List<Map>> objectResputa = gson.fromJson(json,  Map.class);
 		 List<Map> listContenido=objectResputa.get("resources");
 		 
-		 TipoPuntoInteres tipoPuntoInteres=new TipoPuntoInteres();
+		 Deporte tipoPuntoInteres=new Deporte();
 		 tipoPuntoInteres.setIdTipoPuntoInteres(1);
 		 tipoPuntoInteres.setNombre("Parada Taxi");
 		 tipoPuntoInteres.setDescripcion("Parada Taxi");
 		 
-		 List<PuntoInteres> listPuntoInteres=new ArrayList<PuntoInteres>();
+		 List<ActividadDeportiva> listPuntoInteres=new ArrayList<ActividadDeportiva>();
 		 for (Map<String, String> contenido : listContenido) {
 			 Calendar fechaActualC=Calendar.getInstance();
-			 PuntoInteres puntoInteres=new PuntoInteres();
+			 ActividadDeportiva puntoInteres=new ActividadDeportiva();
 			 
 			 puntoInteres.setNombre(contenido.get("ayto:descripcion"));
 			 puntoInteres.setLatitud(contenido.get("ayto:latitud"));
@@ -63,7 +63,7 @@ public class TestJson {
 		 }
 			 
 		 
-		 for (PuntoInteres puntoInteres : listPuntoInteres) {
+		 for (ActividadDeportiva puntoInteres : listPuntoInteres) {
 			pruebaDao.insert(puntoInteres);
 		}
 //		 Map<String, String> contenido=(Map<String, String>) listContenido.get(0);

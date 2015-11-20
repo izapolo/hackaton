@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.gson.Gson;
-import es.trampositosl.hack2progress.business.domain.PuntoInteres;
+import es.trampositosl.hack2progress.business.domain.ActividadDeportiva;
 import es.trampositosl.hack2progress.business.service.IPuntoInteresService;
 
 
@@ -39,7 +39,7 @@ public class GoogleController
     {
 
 	LOGGER.debug("getMap");
-	List<PuntoInteres> listPuntoInteres = new ArrayList<PuntoInteres>();
+	List<ActividadDeportiva> listPuntoInteres = new ArrayList<ActividadDeportiva>();
 	listPuntoInteres = puntoInteresService.list();
 
 	Gson gson = new Gson();
@@ -59,8 +59,8 @@ public class GoogleController
     {
 
 	LOGGER.debug("getWayMap");
-	List<PuntoInteres> listPuntoInteres = new ArrayList<PuntoInteres>();
-	List<PuntoInteres> listPuntoInteres2 = new ArrayList<PuntoInteres>();
+	List<ActividadDeportiva> listPuntoInteres = new ArrayList<ActividadDeportiva>();
+	List<ActividadDeportiva> listPuntoInteres2 = new ArrayList<ActividadDeportiva>();
 	listPuntoInteres = puntoInteresService.list();
 
 	listPuntoInteres2.add(listPuntoInteres.get(0));
@@ -74,12 +74,12 @@ public class GoogleController
 
 
     @RequestMapping(value = "/getJsonWayMap", method = RequestMethod.GET, produces = "application/json")
-    public @ResponseBody List<PuntoInteres> getWayMapJ()
+    public @ResponseBody List<ActividadDeportiva> getWayMapJ()
     {
 
 	LOGGER.debug("getWayMapJ");
-	List<PuntoInteres> listPuntoInteres = new ArrayList<PuntoInteres>();
-	List<PuntoInteres> listPuntoInteres2 = new ArrayList<PuntoInteres>();
+	List<ActividadDeportiva> listPuntoInteres = new ArrayList<ActividadDeportiva>();
+	List<ActividadDeportiva> listPuntoInteres2 = new ArrayList<ActividadDeportiva>();
 	listPuntoInteres = puntoInteresService.list();
 
 	listPuntoInteres2.add(listPuntoInteres.get(0));
