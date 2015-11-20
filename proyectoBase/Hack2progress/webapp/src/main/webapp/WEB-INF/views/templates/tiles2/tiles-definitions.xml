@@ -77,14 +77,33 @@
     	<put-attribute name="body" value="/WEB-INF/views/pages/google/getWayMap.jsp" />
     </definition>
     
-    
 	<!-- Otras Informativas -->    
     <definition  name="changeLogPage" extends="mainTemplate">
     	<put-attribute name="body" value="/WEB-INF/views/pages/commons/changelog.jsp" />
     </definition>
     
-   
     <definition  name="loginPage" extends="templateWhithoutMenu">
     	<put-attribute name="body" value="/WEB-INF/views/pages/public/login.jsp" />
-    </definition>      
+    </definition> 
+    
+    <!-- PRUEBAS -->    
+    <definition  name="1Template" extends="mainTemplate">
+    	<put-attribute name="body" value="/WEB-INF/views/pages/app/index.html" />
+    </definition>
+    <definition  name="0Template" extends="mainTemplate">
+    	<put-attribute name="body" value="/WEB-INF/views/pages/app/index-1.html" />
+    </definition>
+    <definition  name="1Template" extends="mainTemplate">
+    	<put-attribute name="body" value="/WEB-INF/views/pages/app/index-2.html" />
+    </definition>
+    <definition  name="2Template" extends="mainTemplate">
+    	<put-attribute name="body" value="/WEB-INF/views/pages/app/index-3.html" />
+    </definition>
+    <definition  name="3Template" extends="mainTemplate">
+    	<put-attribute name="body" value="/WEB-INF/views/pages/app/index-4.html" />
+    </definition>
+    <definition  name="4Template" extends="mainTemplate">
+    	<put-attribute name="body" value="/WEB-INF/views/pages/app/index-4.html" />
+    </definition>
+            
 </tiles-definitions>

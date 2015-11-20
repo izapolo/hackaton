@@ -88,4 +88,44 @@ public class GoogleController
 	return listPuntoInteres2;
     }
 
+
+    @RequestMapping(value = "/0")
+    public String index0(ModelMap model, HttpServletRequest request)
+    {
+
+	return "0Template";
+    }
+
+
+    @RequestMapping(value = "/1")
+    public String index1(ModelMap model, HttpServletRequest request)
+    {
+
+	return "1Template";
+    }
+
+
+    @RequestMapping(value = "/2")
+    public String index2(ModelMap model, HttpServletRequest request)
+    {
+
+	return "2Template";
+    }
+
+
+    @RequestMapping(value = "/3")
+    public String index3(ModelMap model, HttpServletRequest request)
+    {
+
+	return "3Template";
+    }
+
+
+    @RequestMapping(value = "/4")
+    public String index4(ModelMap model, HttpServletRequest request)
+    {
+
+	return "4Template";
+    }
+
 }

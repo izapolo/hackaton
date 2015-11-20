@@ -11,6 +11,31 @@
 				<img src="${pageContext.request.contextPath}/static/images/home.png" alt="home"/>&nbsp;Home
 			</a>
 		</li>
+		<li>
+			<a href="${pageContext.request.contextPath}/google/0">
+				<img src="${pageContext.request.contextPath}/static/images/home.png" alt="Index0"/>&nbsp;Index0
+			</a>
+		</li>
+		<li>
+			<a href="${pageContext.request.contextPath}/google/1">
+				<img src="${pageContext.request.contextPath}/static/images/home.png" alt="Index1"/>&nbsp;Index1
+			</a>
+		</li>
+		<li>
+			<a href="${pageContext.request.contextPath}/google/2">
+				<img src="${pageContext.request.contextPath}/static/images/home.png" alt="Index2"/>&nbsp;Index2
+			</a>
+		</li>
+		<li>
+			<a href="${pageContext.request.contextPath}/google/3">
+				<img src="${pageContext.request.contextPath}/static/images/home.png" alt="Index3"/>&nbsp;Index3
+			</a>
+		</li>
+		<li>
+			<a href="${pageContext.request.contextPath}/google/4">
+				<img src="${pageContext.request.contextPath}/static/images/home.png" alt="Index4"/>&nbsp;Index4
+			</a>
+		</li>
         <li>
 			<a href="#">Link</a>
 		</li>
