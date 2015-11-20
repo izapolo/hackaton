@@ -28,8 +28,8 @@ public class PruebaDao {
 		dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
 		dataSource.setUrl("jdbc:oracle:thin:@127.0.0.1:1521:xe");
-		dataSource.setUsername("hach2progress");
-		dataSource.setPassword("hach2progress");
+		dataSource.setUsername("hack2progress");
+		dataSource.setPassword("hack2progress");
 
 		Properties properties = new Properties();
 		properties.setProperty("initialSize", "200");
